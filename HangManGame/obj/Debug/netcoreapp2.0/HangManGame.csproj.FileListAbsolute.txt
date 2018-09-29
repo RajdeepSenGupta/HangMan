@@ -1,0 +1,11 @@
+c:\users\rajdeep\source\repos\HangManGame\HangManGame\bin\Debug\netcoreapp2.0\HangManGame.deps.json
+c:\users\rajdeep\source\repos\HangManGame\HangManGame\bin\Debug\netcoreapp2.0\HangManGame.runtimeconfig.json
+c:\users\rajdeep\source\repos\HangManGame\HangManGame\bin\Debug\netcoreapp2.0\HangManGame.runtimeconfig.dev.json
+c:\users\rajdeep\source\repos\HangManGame\HangManGame\bin\Debug\netcoreapp2.0\HangManGame.dll
+c:\users\rajdeep\source\repos\HangManGame\HangManGame\obj\Debug\netcoreapp2.0\HangManGame.csprojResolveAssemblyReference.cache
+c:\users\rajdeep\source\repos\HangManGame\HangManGame\obj\Debug\netcoreapp2.0\HangManGame.csproj.CoreCompileInputs.cache
+c:\users\rajdeep\source\repos\HangManGame\HangManGame\obj\Debug\netcoreapp2.0\HangManGame.AssemblyInfoInputs.cache
+c:\users\rajdeep\source\repos\HangManGame\HangManGame\obj\Debug\netcoreapp2.0\HangManGame.AssemblyInfo.cs
+c:\users\rajdeep\source\repos\HangManGame\HangManGame\bin\Debug\netcoreapp2.0\HangManGame.pdb
+c:\users\rajdeep\source\repos\HangManGame\HangManGame\obj\Debug\netcoreapp2.0\HangManGame.dll
+c:\users\rajdeep\source\repos\HangManGame\HangManGame\obj\Debug\netcoreapp2.0\HangManGame.pdb

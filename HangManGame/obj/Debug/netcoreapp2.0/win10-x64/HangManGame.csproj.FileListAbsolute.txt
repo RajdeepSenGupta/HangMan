@@ -1,0 +1,13 @@
+C:\Users\rajdeep\source\repos\HangManGame\HangManGame\bin\Debug\netcoreapp2.0\win10-x64\hostpolicy.dll
+C:\Users\rajdeep\source\repos\HangManGame\HangManGame\bin\Debug\netcoreapp2.0\win10-x64\hostfxr.dll
+C:\Users\rajdeep\source\repos\HangManGame\HangManGame\bin\Debug\netcoreapp2.0\win10-x64\HangManGame.exe
+C:\Users\rajdeep\source\repos\HangManGame\HangManGame\bin\Debug\netcoreapp2.0\win10-x64\HangManGame.deps.json
+C:\Users\rajdeep\source\repos\HangManGame\HangManGame\bin\Debug\netcoreapp2.0\win10-x64\HangManGame.runtimeconfig.json
+C:\Users\rajdeep\source\repos\HangManGame\HangManGame\bin\Debug\netcoreapp2.0\win10-x64\HangManGame.runtimeconfig.dev.json
+C:\Users\rajdeep\source\repos\HangManGame\HangManGame\bin\Debug\netcoreapp2.0\win10-x64\HangManGame.dll
+C:\Users\rajdeep\source\repos\HangManGame\HangManGame\bin\Debug\netcoreapp2.0\win10-x64\HangManGame.pdb
+C:\Users\rajdeep\source\repos\HangManGame\HangManGame\obj\Debug\netcoreapp2.0\win10-x64\HangManGame.csproj.CoreCompileInputs.cache
+C:\Users\rajdeep\source\repos\HangManGame\HangManGame\obj\Debug\netcoreapp2.0\win10-x64\HangManGame.AssemblyInfoInputs.cache
+C:\Users\rajdeep\source\repos\HangManGame\HangManGame\obj\Debug\netcoreapp2.0\win10-x64\HangManGame.AssemblyInfo.cs
+C:\Users\rajdeep\source\repos\HangManGame\HangManGame\obj\Debug\netcoreapp2.0\win10-x64\HangManGame.dll
+C:\Users\rajdeep\source\repos\HangManGame\HangManGame\obj\Debug\netcoreapp2.0\win10-x64\HangManGame.pdb
