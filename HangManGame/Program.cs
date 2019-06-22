@@ -16,6 +16,7 @@ namespace HangManGame
             Console.WriteLine();
             Console.WriteLine(string.Format("Definition: {0}", letters.Select(x => x.Definition).First()));
             int guessNumber = 0;
+            int uniqueCharactersCount = letters.Select(x => x.Letter.ToString().ToLower()).Distinct().Count();
 
             while (!letters.All(x => x.IsVisible))
             {
@@ -37,6 +38,7 @@ namespace HangManGame
                 {
                     Console.WriteLine();
                     Console.WriteLine(string.Format("Congratulations! You have found the word: {0}!!", new string(letters.Select(x => x.Letter).ToArray())));
+                    Console.WriteLine(string.Format("Minimum tries required: {0}", uniqueCharactersCount));
                     Console.WriteLine(string.Format("You took {0} tries", guessNumber));
                 }
             }
