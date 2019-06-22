@@ -12,7 +12,9 @@ namespace HangManGame
         static void Main(string[] args)
         {
             WordAC[] letters = GetWord();
-            Console.WriteLine(String.Format("It's a {0} letters word. The word is related to {1}. Guess the word...", letters.Length, letters.Select(x => x.Domain).First()));
+            Console.WriteLine(string.Format("It's a {0} letters word. The word is related to {1}. Guess the word...", letters.Length, letters.Select(x => x.Domain).First()));
+            Console.WriteLine();
+            Console.WriteLine(string.Format("Definition: {0}", letters.Select(x => x.Definition).First()));
             int guessNumber = 0;
 
             while (!letters.All(x => x.IsVisible))
@@ -34,8 +36,8 @@ namespace HangManGame
                 if (letters.All(x => x.IsVisible))
                 {
                     Console.WriteLine();
-                    Console.WriteLine(String.Format("Congratulations! You have found the word: {0}!!", new String(letters.Select(x => x.Letter).ToArray())));
-                    Console.WriteLine(String.Format("You took {0} tries", guessNumber));
+                    Console.WriteLine(string.Format("Congratulations! You have found the word: {0}!!", new string(letters.Select(x => x.Letter).ToArray())));
+                    Console.WriteLine(string.Format("You took {0} tries", guessNumber));
                 }
             }
 
@@ -61,10 +63,10 @@ namespace HangManGame
 
             #region Get domains
 
-            string api = String.Concat(StringConstants.dictionaryApi, "/", StringConstants.domains, "/", StringConstants.englishLanguage);
-            HttpResponseMessage response = client.GetAsync(api).Result;
+            string api = string.Concat(StringConstants.dictionaryApi, "/", StringConstants.domains, "/", StringConstants.englishLanguage);
+            HttpResponseMessage response = client.GetAsync(api).GetAwaiter().GetResult();
 
-            JToken json = JObject.Parse(response.Content.ReadAsStringAsync().Result)["results"];
+            JToken json = JObject.Parse(response.Content.ReadAsStringAsync().GetAwaiter().GetResult())["results"];
             int randomCount = random.Next(0, json.Values().ToList().Count);
             string domain = json.Values().ToArray()[randomCount]["en"].ToString();
 
@@ -72,11 +74,22 @@ namespace HangManGame
 
             #region Get word
 
-            api = String.Concat(StringConstants.dictionaryApi, StringConstants.wordlist, StringConstants.englishLanguage, "/", StringConstants.domains, "=", domain);
-            response = client.GetAsync(api).Result;
-            json = JObject.Parse(response.Content.ReadAsStringAsync().Result)["results"];
+            api = string.Concat(StringConstants.dictionaryApi, StringConstants.wordlist, StringConstants.englishLanguage, "/", StringConstants.domains, "=", domain);
+            response = client.GetAsync(api).GetAwaiter().GetResult();
+            json = JObject.Parse(response.Content.ReadAsStringAsync().GetAwaiter().GetResult())["results"];
             randomCount = random.Next(0, json.ToArray().Length);
-            var word = json.ToArray()[randomCount]["word"].ToString();
+            string word = json.ToArray()[randomCount]["word"].ToString();
+            string wordId = json.ToArray()[randomCount]["id"].ToString();
+
+            #endregion
+
+            #region Get word meaning
+
+            api = string.Concat(StringConstants.dictionaryApiV2, StringConstants.entries, StringConstants.sourceLanguageEnglish + "/" + wordId);
+            response = client.GetAsync(api).GetAwaiter().GetResult();
+            JToken senses = JObject.Parse(response.Content.ReadAsStringAsync().GetAwaiter().GetResult())["results"].ToArray()[0]["lexicalEntries"]
+                .ToArray()[0]["entries"].ToArray()[0]["senses"];
+            string definition = senses.ToArray()[0]["definitions"].ToArray()[0].ToString();
 
             #endregion
 
@@ -89,7 +102,8 @@ namespace HangManGame
                 {
                     Letter = word.ToCharArray()[i],
                     IsVisible = word.ToCharArray()[i] == ' ',
-                    Domain = domain
+                    Domain = domain,
+                    Definition = definition
                 };
             }
             return wordAc;
